@@ -1,7 +1,7 @@
 # Write a program to sort a list of Employee objects (name, age, salary) using lambda expression. 
      import java.util.*;
      import java.util.stream.Collectors;
-  class Employee {
+    class Employee {
     private String name;
     private int age;
     private double salary;
