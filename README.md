@@ -1,7 +1,7 @@
 # Write a program to sort a list of Employee objects (name, age, salary) using lambda expression. 
-import java.util.*;
-import java.util.stream.Collectors;
-class Employee {
+  import java.util.*;
+  import java.util.stream.Collectors;
+  class Employee {
     private String name;
     private int age;
     private double salary;
@@ -20,9 +20,9 @@ class Employee {
     public String toString() {
         return "Employee{name='" + name + "', age=" + age + ", salary=" + salary + "}";
     }
-}
+  }
 
-public class Main { 
+  public class Main { 
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
             new Employee("Alice", 30, 50000),
@@ -51,12 +51,13 @@ public class Main {
         System.out.println("\nSorted by Salary:");
         sortedBySalary.forEach(System.out::println);
     }
-} 
+  } 
+  
 # Create a program to use lambda expressions and stream operations to filter students scoring above 75%, sort them by marks, and display their names.
-import java.util.*;
-import java.util.stream.Collectors;
+  import java.util.*;
+  import java.util.stream.Collectors;
 
-class Student {
+  class Student {
     private String name;
     private double marks;
 
@@ -72,9 +73,9 @@ class Student {
     public String toString() {
         return "Student{name='" + name + "', marks=" + marks + "}";
     }
-}
+  }
 
-public class Main {
+    public class Main {
     public static void main(String[] args) {
         List<Student> students = Arrays.asList(
             new Student("Alice", 85),
@@ -94,15 +95,15 @@ public class Main {
         // Display the names of students
         System.out.println("Students scoring above 75% (sorted by marks):");
         filteredAndSortedStudents.forEach(System.out::println);
-    }
-}
+     }
+  }
 
 
 # Write a Java program to process a large dataset of products using streams. Perform operations such as grouping products by category, finding the most expensive product in each category, and calculating the average price of all products
-import java.util.*;
-import java.util.stream.Collectors;
+    import java.util.*;
+    import java.util.stream.Collectors;
 
-class Product {
+    class Product {
     private String name;
     private String category;
     private double price;
@@ -121,9 +122,9 @@ class Product {
     public String toString() {
         return "Product{name='" + name + "', category='" + category + "', price=" + price + "}";
     }
-}
-
-public class Main {
+  }
+ 
+    public class Main {
     public static void main(String[] args) {
         List<Product> products = Arrays.asList(
             new Product("Laptop", "Electronics", 80000),
