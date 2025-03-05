@@ -1,6 +1,6 @@
 # Write a program to sort a list of Employee objects (name, age, salary) using lambda expression. 
-     import java.util.*;
-     import java.util.stream.Collectors;
+    import java.util.*;
+    import java.util.stream.Collectors;
     class Employee {
     private String name;
     private int age;
@@ -20,9 +20,9 @@
     public String toString() {
         return "Employee{name='" + name + "', age=" + age + ", salary=" + salary + "}";
     }
-  }
+    }
 
-  public class Main { 
+    public class Main { 
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
             new Employee("Alice", 30, 50000),
@@ -51,13 +51,14 @@
         System.out.println("\nSorted by Salary:");
         sortedBySalary.forEach(System.out::println);
     }
-  } 
+    } 
   
 # Create a program to use lambda expressions and stream operations to filter students scoring above 75%, sort them by marks, and display their names.
-  import java.util.*;
-  import java.util.stream.Collectors;
 
-  class Student {
+    import java.util.*;
+    import java.util.stream.Collectors;
+
+    class Student {
     private String name;
     private double marks;
 
@@ -72,8 +73,8 @@
     @Override
     public String toString() {
         return "Student{name='" + name + "', marks=" + marks + "}";
+     }
     }
-  }
 
     public class Main {
     public static void main(String[] args) {
@@ -85,21 +86,20 @@
             new Student("Eve", 78)
         );
 
-        // Filtering students with marks above 75%, sorting by marks in descending order
         List<String> filteredAndSortedStudents = students.stream()
-                .filter(student -> student.getMarks() > 75) // Filter marks > 75
-                .sorted(Comparator.comparingDouble(Student::getMarks).reversed()) // Sort in descending order
-                .map(Student::getName) // Extract names
-                .collect(Collectors.toList()); // Collect into a list
-
-        // Display the names of students
+                .filter(student -> student.getMarks() > 75) 
+                .sorted(Comparator.comparingDouble(Student::getMarks).reversed())
+                .map(Student::getName) 
+                .collect(Collectors.toList()); 
+  
         System.out.println("Students scoring above 75% (sorted by marks):");
         filteredAndSortedStudents.forEach(System.out::println);
      }
-  }
+    }
 
 
 # Write a Java program to process a large dataset of products using streams. Perform operations such as grouping products by category, finding the most expensive product in each category, and calculating the average price of all products
+
     import java.util.*;
     import java.util.stream.Collectors;
 
@@ -121,9 +121,9 @@
     @Override
     public String toString() {
         return "Product{name='" + name + "', category='" + category + "', price=" + price + "}";
+     }
     }
-  }
- 
+  
     public class Main {
     public static void main(String[] args) {
         List<Product> products = Arrays.asList(
@@ -138,7 +138,6 @@
             new Product("Jacket", "Clothing", 5000)
         );
 
-        // Grouping products by category
         Map<String, List<Product>> productsByCategory = products.stream()
                 .collect(Collectors.groupingBy(Product::getCategory));
 
@@ -147,7 +146,6 @@
             System.out.println(category + ": " + productList);
         });
 
-        // Finding the most expensive product in each category
         Map<String, Optional<Product>> mostExpensiveByCategory = products.stream()
                 .collect(Collectors.groupingBy(
                         Product::getCategory,
@@ -158,12 +156,11 @@
         mostExpensiveByCategory.forEach((category, product) ->
                 System.out.println(category + ": " + product.get().getName() + " (₹" + product.get().getPrice() + ")"));
 
-        // Calculating the average price of all products
         double averagePrice = products.stream()
                 .mapToDouble(Product::getPrice)
                 .average()
                 .orElse(0.0);
 
         System.out.println("\nAverage price of all products: ₹" + averagePrice);
+       }
     }
-}
